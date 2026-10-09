@@ -1,0 +1,350 @@
+.control-panel {
+    position: sticky;
+    top: 16px;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    width: 340px;
+    max-height: calc(100vh - 32px);
+    overflow-y: auto;
+    padding: 16px;
+    border-radius: 12px;
+    background: teal;
+    color: white;
+    font-family: sans-serif;
+}
+
+.control-panel h2,
+.control-panel h3 {
+    margin: 0 0 8px;
+}
+
+.control-panel section {
+    margin-bottom: 16px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.layer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+}
+
+.grow {
+    flex: 1;
+    text-align: left;
+}
+
+.status {
+    align-self: center;
+    font-size: 0.85em;
+    opacity: 0.85;
+}
+
+.option {
+    display: block;
+    margin-bottom: 4px;
+}
+
+.hint {
+    margin: 0 0 8px;
+    font-size: 0.85em;
+    opacity: 0.85;
+}
+
+.palette {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 48px);
+    gap: 4px;
+}
+
+.swatch {
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    image-rendering: pixelated;
+}
+
+.active {
+    outline: 3px solid gold;
+}
+
+.form {
+    display: grid;
+    gap: 8px;
+    margin-top: 12px;
+    padding: 12px;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.form-heading {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.form-heading span {
+    opacity: 0.8;
+    font-size: 0.85em;
+}
+
+.form fieldset {
+    display: grid;
+    gap: 8px;
+    min-width: 0;
+    margin: 0;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 6px;
+}
+
+.form legend {
+    padding: 0 4px;
+    font-weight: bold;
+}
+
+.form label {
+    display: grid;
+    gap: 2px;
+    font-size: 0.85em;
+}
+
+.form input,
+.form select,
+.form textarea {
+    box-sizing: border-box;
+    width: 100%;
+    font: inherit;
+    font-size: 1rem;
+}
+
+.form textarea {
+    min-height: 140px;
+    font-family: monospace;
+    font-size: 0.85rem;
+}
+
+.pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.error {
+    margin: 0;
+    padding: 8px;
+    border-radius: 4px;
+    background: #fdd;
+    color: #700;
+    font-size: 0.8em;
+    white-space: pre-wrap;
+}
+
+.save-error {
+    margin-top: 8px;
+}
+
+.danger {
+    margin-left: auto;
+}
+
+.control-panel details {
+    margin-bottom: 12px;
+    padding: 8px;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.12);
+}
+
+.control-panel summary {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.control-panel details[open] > summary {
+    margin-bottom: 8px;
+}
+
+.control-panel code {
+    font-size: 0.95em;
+}
+
+.banner {
+    display: grid;
+    gap: 8px;
+    margin-bottom: 16px;
+    padding: 10px;
+    border-radius: 8px;
+    background: #fff3c4;
+    color: #5a4300;
+    font-size: 0.9em;
+}
+
+.dialog {
+    width: min(360px, calc(100vw - 32px));
+    box-sizing: border-box;
+    padding: 16px;
+    border: none;
+    border-radius: 12px;
+    background: teal;
+    color: white;
+    font-family: sans-serif;
+}
+
+.dialog::backdrop {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.dialog h3 {
+    margin: 0 0 8px;
+}
+
+.anchors {
+    display: grid;
+    grid-template-columns: repeat(3, 28px);
+    gap: 2px;
+    margin-top: 2px;
+}
+
+.anchors button {
+    height: 28px;
+    padding: 0;
+}
+
+.unused {
+    opacity: 0.35;
+}
+
+.swatch {
+    position: relative;
+}
+
+.badge {
+    position: absolute;
+    right: 1px;
+    bottom: 1px;
+    padding: 0 3px;
+    border-radius: 3px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    font-size: 10px;
+    line-height: 14px;
+}
+
+.problems {
+    display: grid;
+    gap: 4px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.problem {
+    width: 100%;
+    padding: 4px 6px;
+    border: none;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.15);
+    color: inherit;
+    font: inherit;
+    font-size: 0.85em;
+    text-align: left;
+    cursor: pointer;
+}
+
+.warning {
+    background: rgba(255, 214, 0, 0.3);
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8em;
+}
+
+.table th,
+.table td {
+    padding: 3px 4px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+    text-align: left;
+    vertical-align: top;
+    overflow-wrap: anywhere;
+}
+
+.missing {
+    color: #ffd600;
+}
+
+.script {
+    display: grid;
+    gap: 6px;
+}
+
+.action-list {
+    display: grid;
+    gap: 6px;
+    padding-left: 8px;
+    border-left: 2px solid rgba(255, 255, 255, 0.35);
+}
+
+.action {
+    display: grid;
+    gap: 4px;
+    padding: 6px;
+    border-radius: 6px;
+    background: rgba(0, 0, 0, 0.15);
+}
+
+.action .row {
+    gap: 4px;
+}
+
+.small {
+    padding: 2px 6px;
+    font-size: 0.8em;
+}
+
+.sprite-field {
+    display: grid;
+    gap: 2px;
+}
+
+.sprite-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
+    gap: 6px;
+    margin-top: 6px;
+}
+
+.sprite-grid button {
+    display: grid;
+    justify-items: center;
+    gap: 3px;
+    padding: 6px 4px;
+    overflow: hidden;
+    font-size: 0.72rem;
+}
+
+.sprite-grid button span:last-child {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.sprite-preview {
+    width: 32px;
+    height: 32px;
+    background-repeat: no-repeat;
+    image-rendering: pixelated;
+}
+
+.form textarea.text {
+    min-height: 3.5em;
+    font-family: inherit;
+}

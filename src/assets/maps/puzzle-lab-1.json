@@ -1,0 +1,130 @@
+{
+    "id": "puzzle-lab-1",
+    "name": "Puzzle Lab",
+    "width": 12,
+    "height": 10,
+    "tilesetId": "overworld",
+    "layers": {
+        "ground": [
+            56, 56, 56, 56, 56, 56, 56, 56, 56, 56, 56, 56,
+            56, 56, 56, 56, 56, 56, 56, 56, 56, 56, 56, 56,
+            56, 55, 55, 55, 55, 55, 55, 55, 55, 55, 55, 56,
+            56, 55, 55, 55, 55, 55, 55, 55, 55, 55, 55, 56,
+            56, 55, 55, 55, 55, 55, 55, 55, 55, 55, 55, 56,
+            56, 55, 55, 55, 55, 55, 55, 55, 55, 55, 55, 56,
+            56, 55, 55, 55, 55, 55, 55, 55, 55, 55, 55, 56,
+            56, 55, 55, 55, 55, 55, 55, 55, 55, 55, 55, 56,
+            56, 55, 55, 55, 55, 55, 55, 55, 55, 55, 55, 56,
+            56, 56, 56, 56, 56, 8, 8, 56, 56, 56, 56, 56
+        ],
+        "decoration": [
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 60, 60, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 59, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 57, 58, 0, 0, 57, 58, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 44, 44, 0, 0, 0, 0, 45, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        ],
+        "overhead": [
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        ]
+    },
+    "entities": [
+        {
+            "type": "warp",
+            "id": "lab-exit",
+            "x": 5,
+            "y": 9,
+            "target": {
+                "mapId": "city-1",
+                "x": 15,
+                "y": 5
+            }
+        },
+        {
+            "type": "sign",
+            "id": "electrical-panel",
+            "x": 5,
+            "y": 3,
+            "script": "electrical-panel"
+        },
+        {
+            "type": "sign",
+            "id": "sticky-note",
+            "x": 8,
+            "y": 3,
+            "script": "sticky-note"
+        },
+        {
+            "type": "npc",
+            "id": "lab-technician",
+            "x": 3,
+            "y": 6,
+            "sprite": "scientist",
+            "facing": "down",
+            "movement": "static",
+            "script": "lab-technician-talk"
+        }
+    ],
+    "scripts": {
+        "electrical-panel": [
+            {
+                "type": "if",
+                "flag": "lab-panel-reset",
+                "then": [
+                    {
+                        "type": "say",
+                        "text": "The electrical board is already reset. Its green status light blinks steadily."
+                    }
+                ],
+                "else": [
+                    {
+                        "type": "miniGame",
+                        "miniGame": {
+                            "type": "password",
+                            "title": "Electrical board",
+                            "prompt": "Enter the four-letter reset code.",
+                            "answer": "sparks",
+                            "success": [
+                                {
+                                    "type": "setFlag",
+                                    "flag": "lab-panel-reset",
+                                    "value": true
+                                },
+                                {
+                                    "type": "say",
+                                    "text": "The relays click into place. Power has been restored to the lab."
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        ],
+        "sticky-note": [
+            {
+                "type": "say",
+                "text": "A sticky note reads: When the relay sparks, remember SPARKS."
+            }
+        ],
+        "lab-technician-talk": [
+            {
+                "type": "say",
+                "text": "The breaker panel locked me out. I wrote the reset code on a note before the lights died."
+            }
+        ]
+    }
+}

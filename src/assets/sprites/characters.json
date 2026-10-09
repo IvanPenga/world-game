@@ -1,0 +1,6 @@
+{
+    "image": "/sprites/characters.svg",
+    "frameSize": 16,
+    "facings": ["down", "up", "left", "right"],
+    "sprites": ["player", "npc", "old-man", "girl", "boy", "nurse", "shopkeeper", "guard", "fisherman", "hiker", "scientist", "creature", "mayor", "merchant", "child", "farmer", "pet", "cook"]
+}

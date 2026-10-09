@@ -1,0 +1,49 @@
+{
+    "items": [
+        {
+            "id": "potion",
+            "name": "Potion",
+            "description": "A spray bottle of medicine. Smells faintly of mint."
+        },
+        {
+            "id": "berry",
+            "name": "Oran Berry",
+            "description": "A round blue berry that grows in the Whispering Forest. Sweet and a little sour."
+        },
+        {
+            "id": "wood",
+            "name": "Wood",
+            "description": "A sturdy piece of timber gathered from fallen branches and old logs."
+        },
+        {
+            "id": "stone",
+            "name": "Stone",
+            "description": "A rough stone gathered from small outcrops. Heavy, but useful."
+        },
+        {
+            "id": "fruit",
+            "name": "Fruit",
+            "description": "Fresh wild fruit picked from a low bush. Sweet enough to lift your spirits."
+        },
+        {
+            "id": "old-map",
+            "name": "Old Map",
+            "description": "A faded map of the region. Someone has circled Brookside Town in red ink."
+        },
+        {
+            "id": "house-key",
+            "name": "House Key",
+            "description": "A small brass key on a string. It must open a door somewhere nearby."
+        },
+        {
+            "id": "pearl",
+            "name": "Pearl",
+            "description": "A smooth pink pearl from the tiny island in Brookside Bay. It shimmers in the light."
+        },
+        {
+            "id": "compass",
+            "name": "Old Compass",
+            "description": "The hermit's brass compass. However you turn it, the needle points back to Brookside Town."
+        }
+    ]
+}

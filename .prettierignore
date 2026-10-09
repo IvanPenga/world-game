@@ -1,0 +1,3 @@
+# Map, tileset and sprite files are written by the editor (src/world-map/map-file.ts) and tools/generate-art.py,
+# which keep one row of tiles / one tile per line. Prettier would reformat them.
+src/assets

@@ -1,0 +1,12 @@
+main {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 16px;
+}
+
+.map-area {
+    flex: 1;
+    min-width: 0;
+    overflow: auto;
+}

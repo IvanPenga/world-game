@@ -1,0 +1,89 @@
+{
+    "id": "house-1",
+    "name": "House",
+    "width": 8,
+    "height": 8,
+    "tilesetId": "overworld",
+    "layers": {
+        "ground": [
+            24, 24, 22, 22, 22, 22, 24, 24,
+            22, 22, 22, 22, 22, 22, 22, 22,
+            21, 21, 21, 21, 21, 21, 21, 21,
+            21, 21, 21, 21, 21, 21, 21, 21,
+            21, 21, 21, 21, 21, 21, 21, 21,
+            21, 21, 21, 21, 21, 21, 21, 21,
+            21, 21, 21, 21, 21, 21, 21, 21,
+            21, 21, 21, 23, 21, 21, 21, 21
+        ],
+        "decoration": [
+            0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0
+        ],
+        "overhead": [
+            0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0
+        ]
+    },
+    "entities": [
+        {
+            "type": "warp",
+            "id": "house-exit",
+            "x": 3,
+            "y": 7,
+            "target": {
+                "mapId": "route-1",
+                "x": 6,
+                "y": 7
+            }
+        },
+        {
+            "type": "npc",
+            "id": "mom",
+            "x": 5,
+            "y": 3,
+            "sprite": "girl",
+            "facing": "down",
+            "movement": "static",
+            "script": "mom-talk"
+        },
+        {
+            "type": "item",
+            "id": "house-key",
+            "x": 7,
+            "y": 2,
+            "item": "house-key"
+        }
+    ],
+    "scripts": {
+        "mom-talk": [
+            {
+                "type": "if",
+                "flag": "met-old-man",
+                "then": [
+                    {
+                        "type": "say",
+                        "text": "So you met the old man? He knows every path on this route."
+                    }
+                ],
+                "else": [
+                    {
+                        "type": "say",
+                        "text": "Go and say hello to the old man on the route!"
+                    }
+                ]
+            }
+        ]
+    }
+}
